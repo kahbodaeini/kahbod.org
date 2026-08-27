@@ -1,0 +1,190 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Industry resume — Kahbod Aeini
+%
+% Requires resume.cls in the same directory.
+% Build: pdflatex Kahbod-Aeini_Resume.tex
+%
+% Companion documents:
+%   ../Kahbod-Aeini_CV.tex                   (general CV)
+%   ../Academic/Kahbod-Aeini_AcademicCV.tex  (academic CV)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume}
+
+\usepackage[left=0.65in,top=0.45in,right=0.65in,bottom=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+% Tighten vertical rhythm so the resume fits two pages
+\setlength{\parskip}{0.35em}
+\def\nameskip{\smallskip}
+
+% Compact bullet list used throughout
+\newenvironment{rItems}{%
+  \begin{itemize}[leftmargin=1.1em, itemsep=0.05em, topsep=0.15em, parsep=0em, label=$\cdot$]%
+}{\end{itemize}\vspace{0.2em}}
+
+\name{Kahbod Aeini}
+\address{Waterloo, Ontario, Canada}
+\address{\href{mailto:kaeini@uwaterloo.ca}{kaeini@uwaterloo.ca} | \href{https://www.linkedin.com/in/kahbod-aeini-833b71190/}{LinkedIn} | \href{https://github.com/kahbodaeini}{GitHub} | \href{https://kahbod.org}{kahbod.org} | \href{https://scholar.google.ca/citations?user=3Fd5R9YAAAAJ&hl=en}{Google Scholar}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Summary}
+Software engineer and distributed systems researcher. Designs and ships GraphQL and REST APIs, SQL-backed services,
+and application security features for a production retail energy platform, while completing a PhD on concurrency and
+persistent memory at the University of Waterloo. Strong across the backend stack --- C\#/.NET and Python services, heavy
+SQL, relational and document databases, Docker and Linux --- plus deep expertise in concurrent and lock-free data
+structures on real multicore hardware. Best Paper Award at PODC 2026 for work on wait-free synchronization. Carries a
+full-time PhD and a production engineering role in parallel, and has shaped hiring and onboarding and led teams in both.
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Technical Skills}
+\textbf{Languages}: C\#, SQL, GraphQL, Python, C/C++, Java, R, Haskell, Prolog \\
+\textbf{APIs \& Backend}: GraphQL schema \& resolver design, REST API design, .NET / ASP.NET Core, Entity Framework, Django, EDI integrations, Docker, Git, Linux / NixOS \\
+\textbf{Security}: authentication \& authorization, role- and permission-based access control, encryption \& secure data exchange, secure API design \\
+\textbf{Databases \& Data}: Microsoft SQL Server, PostgreSQL, MySQL, MongoDB, complex SQL \& query optimization, schema design, ETL pipeline design, Pandas, NumPy \\
+\textbf{Concurrency \& Systems}: multicore \& NUMA programming, Intel RTM / transactional memory, OpenMP, atomic primitives (CAS), lock-free \& wait-free data structures, epoch-based memory reclamation, \texttt{perf} profiling \\
+\textbf{Machine Learning}: PyTorch, TensorFlow, scikit-learn, OpenCV, feature engineering, model evaluation
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Experience}
+
+{\bf Software Engineer} \hfill {Dec 2025 -- Present} \\
+{\em ArcTrade (part-time, alongside PhD)}
+\begin{rItems}
+  \item Design and build GraphQL and REST APIs for ArcTrade's retail energy operating system (Retail eOS), used by retail electricity providers in North American markets.
+  \item Core contributor to the platform's security module: authentication, authorization, and permission-based access control governing which users and partners may read or act on sensitive market and financial data.
+  \item Write and optimize substantial SQL against the platform's relational data model, backing API resolvers and reporting paths with correct, performant queries.
+  \item Implement secure, automated electronic data interchange (EDI) with external trading partners, enabling encrypted and verifiable exchange of business transactions.
+  \item Contribute to components supporting energy trading and risk management (ETRM), pricing, billing, and settlement workflows, where correctness of financial calculations is non-negotiable.
+  \item Helped design the team's hiring and onboarding process for new engineers.
+% \item Work with cross-functional teams to design scalable, reliable software for the operational and financial complexity of the energy sector.
+\end{rItems}
+
+{\bf Data Engineer} \hfill {Feb 2022 -- Sep 2022} \\
+{\em AI Lida}
+\begin{rItems}
+  \item Developed, maintained, and optimized ETL data pipelines in Python and PostgreSQL serving analytics workloads.
+  \item Partnered with the security department to gather requirements and deliver data solutions aligned with business objectives.
+  \item Interviewed, hired, trained, and supervised a team of 5 data engineering interns, running onboarding and performance feedback.
+\end{rItems}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Research Experience}
+
+{\bf Graduate Research Assistant} \hfill {Jan 2026 -- Present} \\
+{\em Distributed Algorithms and Systems Lab, University of Waterloo --- Advisor: Prof. Wojciech Golab}
+\begin{rItems}
+  \item Design and analyze shared-memory algorithms and synchronization primitives for systems with persistent (non-volatile) memory.
+  \item Focus on recoverable objects: concurrent data structures whose state stays consistent across crash failures --- directly relevant to durable, fault-tolerant storage systems.
+\end{rItems}
+
+{\bf Graduate Research Assistant} \hfill {2023 -- 2025} \\
+{\em University of Calgary --- Supervisor: Prof. Philipp Woelfel}
+\begin{rItems}
+  \item Designed the first constant-space randomized wait-free locking algorithm for mutual exclusion in shared-memory systems; proved correctness and wait-freedom, and analyzed performance with probability theory.
+  \item Resulting paper received the {\bf Best Paper Award} at PODC 2026, the flagship conference in distributed computing.
+\end{rItems}
+
+{\bf Undergraduate Research Assistant (Remote)} \hfill {Feb 2023 -- Aug 2023} \\
+{\em Johns Hopkins University --- Supervisor: Prof. Mehdi Pirooznia}
+\begin{rItems}
+  \item Built machine learning pipelines and feature selection workflows in Python/R to predict immune cell composition in lung cancer; ran differential expression and enrichment analyses and automated reporting for reproducible results.
+\end{rItems}
+
+% {\bf Research Assistant, Deep Learning} \hfill {Oct 2021 -- Feb 2022} \\
+% {\em Institute for Research in Fundamental Sciences (IPM)}
+% \begin{rItems}
+%   \item Developed and evaluated face clustering algorithms using graph convolutional networks for linkage prediction and pairwise classification; implemented the benchmarking pipeline.
+% \end{rItems}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Selected Projects}
+
+\textbf{Concurrent Data Structures on Multicore Hardware} \hfill {2026} \\
+Implemented and benchmarked TLE-based concurrent binary search trees and expandable probing hash tables using Intel
+Restricted Transactional Memory on a 192-thread NUMA server. Analyzed commit/abort behavior, false sharing, NUMA effects,
+and epoch-based memory reclamation with \texttt{perf}.
+
+% \textbf{Fraud Detection from Bank Transaction Sequences} \hfill \href{https://github.com/kahbodaeini/Fraud-Detection}{GitHub} \\
+% BSc thesis. Built, trained, and compared three machine learning models for sequence-based fraud detection on a
+% banking transaction dataset, including the feature engineering pipeline and comparative evaluation.
+
+% \textbf{Cloud Drive --- File Sharing Service} \hfill \href{https://github.com/sad-project}{GitHub} \\
+% Designed and implemented a file-sharing service in a six-person team using Django, Docker, and MinIO, working in an
+% Agile process.
+
+\textbf{Secure Chat Application} \hfill \href{https://github.com/rerfan24/DNS-project}{GitHub} \\
+Built a Python chat application in a team of three, hardened with multiple computer-security mechanisms:
+authentication, encrypted transport, and integrity checks.
+
+% \textbf{Information Retrieval System} \hfill \href{https://github.com/IR1401-Spring-Final-Projects/SocialMediaHealth1401-19_39}{GitHub} \\
+% Designed a retrieval system over Twitter interactions and health articles with a GUI, plus classification and
+% clustering of documents.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Education}
+
+{\bf University of Waterloo} \hfill {Jan 2026 -- Present} \\
+PhD, Electrical and Computer Engineering --- Advisor: Prof. Wojciech Golab
+
+{\bf University of Calgary} \hfill {2023 -- 2025} \\
+MSc, Computer Science --- Thesis: \textit{\href{https://ucalgary.scholaris.ca/bitstreams/5ae5cf8f-5009-4db3-b91e-d3dbb679b5bf/download}{A Space-Optimal Randomized Wait-Free Lock}}
+
+{\bf Aryamehr (Sharif) University of Technology} \hfill {2019 -- 2023} \\
+BSc, Computer Engineering --- Thesis: \textit{\href{https://github.com/kahbodaeini/Fraud-Detection}{Fraud Detection from Sequences of Bank Transactions}}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Awards}
+\textbf{Best Paper Award}, 45th ACM Symposium on Principles of Distributed Computing (PODC) \hfill {2026} \\
+\textbf{Departmental Research Award}, Department of Computer Science, University of Calgary \hfill {2023} \\
+\textbf{Top 100 Nationally} (94th of $\sim$160,000, Entrance Exam) \& \textbf{National Elites Fellowship}, Iran \hfill {2019}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Selected Publications}
+\textit{\href{https://dl.acm.org/doi/10.1145/3796701.3815952}{Simple and Efficient Randomized Wait-Free Locks}} --- PODC 2026. \textbf{Best Paper Award.} \\
+\textit{\href{https://dl.acm.org/doi/10.1145/3820355.3820388}{Analyzing Linearizability in Relativistic Distributed Systems}} --- ApPLIED Workshop @ PODC 2026. \\
+\textit{A Faster Universal Construction of Detectable Read-Modify-Write Objects for Persistent Memory} --- under review, PPoPP 2027.
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	LEADERSHIP
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Leadership \& Mentoring}
+\textbf{Head Teaching Assistant}, University of Calgary (2023--2026) and Sharif University of Technology (2020--2023). Led TA
+teams of up to 25 across algorithms, data structures, and theoretical computer science, supporting 400+ students; owned
+assignment design, tutorial delivery, and grading standards.
+\end{rSection}
+
+\end{document}

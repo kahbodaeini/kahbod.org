@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fa-cv.sty — سبک مشترک نسخه‌های فارسی رزومه و کارنامۀ علمی
+%
+% با XeLaTeX کامپایل شود:  xelatex <file>.tex
+% قلم: Arial Unicode MS (روی macOS موجود است). در صورت نبود، قلم دیگری
+% مانند Vazirmatn یا XB Zar را در دستور settextfont جایگزین کنید.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{fa-cv}[2026/08/31 Persian CV style]
+
+\usepackage[left=2cm,top=1.7cm,right=2cm,bottom=1.7cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black, pdfencoding=auto}
+
+% xepersian باید پس از بقیۀ بسته‌ها بارگذاری شود
+\usepackage{xepersian}
+\settextfont[BoldFont={Arial Unicode MS},BoldFeatures={FakeBold=2.2}]{Arial Unicode MS}
+\setlatintextfont{Times New Roman}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% سربرگ: نام و راه‌های تماس
+\newcommand{\faHeader}[2]{%
+  \begin{center}
+    {\Huge\bfseries #1}\\[0.5em]
+    #2
+  \end{center}
+  \vspace{0.2em}
+}
+
+% بخش‌های اصلی سند
+\newenvironment{faSection}[1]{%
+  \vspace{0.7em}%
+  {\large\bfseries #1}%
+  \vspace{0.25em}\hrule\vspace{0.6em}%
+  \begin{list}{}{\setlength{\leftmargin}{1em}\setlength{\rightmargin}{0em}}%
+  \item[]%
+}{%
+  \end{list}%
+}
+
+% فهرست گلوله‌ای فشرده
+\newenvironment{faItems}{%
+  \begin{itemize}[leftmargin=1.2em, itemsep=0.1em, topsep=0.2em, parsep=0em, label=$\cdot$]%
+}{\end{itemize}\vspace{0.2em}}
+
+% یک ردیف عنوان‌دار: عنوان در راست، تاریخ در چپ
+\newcommand{\faEntry}[2]{{\bfseries #1}\hfill {#2}\\}
